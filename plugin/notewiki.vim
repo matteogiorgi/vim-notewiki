@@ -22,7 +22,6 @@ augroup notesettings
                 \             'p' : 'pdf',
                 \             'b' : 'beamer',
                 \             'h' : 'html',
-                \             'g' : 'geoteo',
                 \             },
                 \         } |
                 \ else |
