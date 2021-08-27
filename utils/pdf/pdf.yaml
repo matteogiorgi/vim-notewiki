@@ -1,0 +1,28 @@
+---
+title: \LaTeX
+subtitle: "`report`"
+# author: ""
+# date: ""
+header-includes:
+    - \usepackage{pdf/draculatheme}
+    - \usepackage{libertine}
+    - \usepackage{libertinust1math}
+output:
+    pdf_document:
+        keep_tex: no
+        toc: false
+        toc_depth: 2
+        number_sections: false
+        fig_caption: false
+always_allow_html: true
+geometry:  margin=1in
+linkcolor: draculapink
+filecolor: draculagreen
+citecolor: draculapurple
+urlcolor:  draculacyan
+toccolor:  draculaorange
+documentclass: report
+fontsize: 12pt
+fontfamily: libertine
+monofont: "Ubuntu Mono"
+---
