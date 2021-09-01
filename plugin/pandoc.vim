@@ -41,7 +41,7 @@ function! s:NotePandoc(format) abort
             !pandoc $currfile -s --to=html5 -o $html/%:t:r.html
                         \ --mathjax
                         \ --highlight-style=$html/assets/dracula.theme
-                        \ -c style.css
+                        \ -c assets/style.css
                         \ --lua-filter=$html/assets/link2html.lua
                         \ -B $html/assets/prebody.html
                         \ -A $html/assets/footer.html
