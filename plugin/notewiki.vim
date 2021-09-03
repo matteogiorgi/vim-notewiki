@@ -10,30 +10,6 @@ if !isdirectory($wikipages)
 endif
 
 
-augroup notesettings
-    autocmd!
-    autocmd BufEnter *
-                \ if &filetype ==? 'markdown'  || &filetype ==? 'markdown.pandoc' || &filetype ==? 'pandoc' |
-                \     let g:which_key_map['n'] = { 'name' : '+Notes',
-                \         'i' : 'index',
-                \         'b' : 'browse',
-                \         's' : 'scratch',
-                \         'p' : { 'name' : '+Pandoc',
-                \             'p' : 'pdf',
-                \             'b' : 'beamer',
-                \             'h' : 'html',
-                \             },
-                \         } |
-                \ else |
-                \     let g:which_key_map['n'] = { 'name' : '+Notes',
-                \         'i' : 'index',
-                \         'b' : 'browse',
-                \         's' : 'scratch',
-                \         } |
-                \ endif
-augroup end
-
-
 " CreateLink{{{
 function s:CreateLink() abort
 	execute 'normal ' . '"zyiw'
