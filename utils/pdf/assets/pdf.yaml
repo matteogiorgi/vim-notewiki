@@ -4,7 +4,7 @@ subtitle: "`report`"
 # author: ""
 # date: ""
 header-includes:
-    - \usepackage{pdf/draculatheme}
+    - \usepackage{pdf/assets/draculatheme}
     - \usepackage{libertine}
     - \usepackage{libertinust1math}
 output:
