@@ -21,7 +21,7 @@ filecolor: draculagreen
 citecolor: draculapurple
 urlcolor:  draculacyan
 toccolor:  draculaorange
-documentclass: article
+documentclass: report
 fontsize: 12pt
 fontfamily: libertine
 monofont: "Ubuntu Mono"
