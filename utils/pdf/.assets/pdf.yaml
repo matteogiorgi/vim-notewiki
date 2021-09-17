@@ -7,6 +7,9 @@ header-includes:
     - \usepackage{pdf/.assets/draculatheme}
     - \usepackage{libertine}
     - \usepackage{libertinust1math}
+    - \usepackage{titlesec}
+    - \titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+    - \titlespacing*{\chapter}{0pt}{0pt}{0pt}
 output:
     pdf_document:
         keep_tex: no
@@ -21,7 +24,7 @@ filecolor: draculagreen
 citecolor: draculapurple
 urlcolor:  draculacyan
 toccolor:  draculaorange
-documentclass: report
+documentclass: article
 fontsize: 12pt
 fontfamily: libertine
 monofont: "Ubuntu Mono"
