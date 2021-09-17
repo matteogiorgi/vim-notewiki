@@ -1,6 +1,6 @@
 ---
-title: \LaTeX
-subtitle: "`report`"
+title: Notewiki
+subtitle: \LaTeX
 # author: ""
 # date: ""
 header-includes:
@@ -15,13 +15,13 @@ output:
         number_sections: false
         fig_caption: false
 always_allow_html: true
-geometry:  margin=1in
+geometry:  "left=3cm,right=3cm,top=3cm,bottom=3cm"
 linkcolor: draculapink
 filecolor: draculagreen
 citecolor: draculapurple
 urlcolor:  draculacyan
 toccolor:  draculaorange
-documentclass: report
+documentclass: article
 fontsize: 12pt
 fontfamily: libertine
 monofont: "Ubuntu Mono"
