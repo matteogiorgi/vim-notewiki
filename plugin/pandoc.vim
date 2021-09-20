@@ -24,8 +24,8 @@ function! s:NotePandoc(format) abort
             endif
             !pandoc $currfile -s --to=pdf -o $pdf/%:t:r.pdf
                         \ --pdf-engine=lualatex
-                        \ --highlight-style=$pdf/.assets/dracula.theme
-                        \ --metadata-file=$pdf/.assets/pdf.yaml
+                        \ --highlight-style=$pdf/assets/dracula.theme
+                        \ --metadata-file=$pdf/assets/pdf.yaml
         elseif a:format ==? 'beamer'
             let l:beamer = l:prefix . '/beamer'
             let $beamer = fnamemodify(l:beamer, ':p')
@@ -38,8 +38,8 @@ function! s:NotePandoc(format) abort
             endif
             !pandoc $currfile -s --to=beamer -o $beamer/%:t:r.pdf
                         \ --pdf-engine=lualatex
-                        \ --highlight-style=$beamer/.assets/dracula.theme
-                        \ --metadata-file=$beamer/.assets/beamer.yaml
+                        \ --highlight-style=$beamer/assets/dracula.theme
+                        \ --metadata-file=$beamer/assets/beamer.yaml
         elseif a:format ==? 'html'
             let l:html = l:prefix . '/html'
             let $html = fnamemodify(l:html, ':p')
@@ -52,12 +52,12 @@ function! s:NotePandoc(format) abort
             endif
             !pandoc $currfile -s --to=html5 -o $html/%:t:r.html
                         \ --mathjax
-                        \ --highlight-style=$html/.assets/dracula.theme
-                        \ -c .assets/style.css
-                        \ --lua-filter=$html/.assets/link2html.lua
-                        \ -B $html/.assets/prebody.html
-                        \ -A $html/.assets/footer.html
-                        \ -H $html/.assets/header.html
+                        \ --highlight-style=$html/assets/dracula.theme
+                        \ -c assets/style.css
+                        \ --lua-filter=$html/assets/link2html.lua
+                        \ -B $html/assets/prebody.html
+                        \ -A $html/assets/footer.html
+                        \ -H $html/assets/header.html
                         \ -T $prefixtail
         endif
     else

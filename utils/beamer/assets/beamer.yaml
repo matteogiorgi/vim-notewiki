@@ -1,10 +1,10 @@
 ---
-title: Notewiki
-subtitle: \LaTeX
+# title: ""
+# subtitle: ""
 # author: ""
 # date: ""
 header-includes:
-    - \usepackage{beamer/.assets/beamercolorthemedracula}
+    - \usepackage{beamer/assets/beamercolorthemedracula}
     - \usepackage{libertine}
     - \usepackage{libertinust1math}
 output: 

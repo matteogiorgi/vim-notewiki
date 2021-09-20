@@ -4,7 +4,7 @@
 # author: ""
 # date: ""
 header-includes:
-    - \usepackage{pdf/.assets/draculatheme}
+    - \usepackage{pdf/assets/draculatheme}
     - \usepackage{libertine}
     - \usepackage{libertinust1math}
     - \usepackage{titlesec}
