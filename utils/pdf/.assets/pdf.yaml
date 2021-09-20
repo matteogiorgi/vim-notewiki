@@ -1,15 +1,21 @@
 ---
-title: Notewiki
-subtitle: \LaTeX
-# author: ""
-# date: ""
 header-includes:
     - \usepackage{pdf/.assets/draculatheme}
     - \usepackage{libertine}
     - \usepackage{libertinust1math}
     - \usepackage{titlesec}
-    - \titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
-    - \titlespacing*{\chapter}{0pt}{0pt}{0pt}
+    - \usepackage{caption}
+    - \usepackage{fancyhdr}
+    - \titleformat{\chapter}[display]{\normalfont\Huge\scshape}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+    - \titlespacing{\chapter}{0pt}{0pt}{10pt}
+    - \captionsetup[figure]{ name=, labelsep=none, labelformat=empty }
+    - \pagestyle{fancy}
+    - \fancyhf{}
+    - \fancyhead[L]{\scshape\leftmark}
+    - \fancyhead[R]{\scshape pag. \thepage}
+    - \renewcommand\chaptermark[1]{\markboth{#1}{}}
+    - \renewcommand\sectionmark[1]{\markright{#1}}
+    - \renewcommand{\headrulewidth}{.1pt}
 output:
     pdf_document:
         keep_tex: no
@@ -24,7 +30,7 @@ filecolor: draculagreen
 citecolor: draculapurple
 urlcolor:  draculacyan
 toccolor:  draculaorange
-documentclass: article
+documentclass: report
 fontsize: 12pt
 fontfamily: libertine
 monofont: "Ubuntu Mono"

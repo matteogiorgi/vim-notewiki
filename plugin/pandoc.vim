@@ -26,6 +26,7 @@ function! s:NotePandoc(format) abort
                         \ --pdf-engine=lualatex
                         \ --highlight-style=$pdf/.assets/dracula.theme
                         \ --metadata-file=$pdf/.assets/pdf.yaml
+                        \ --include-before-body=$pdf/.assets/prebody.tex
         elseif a:format ==? 'beamer'
             let l:beamer = l:prefix . '/beamer'
             let $beamer = fnamemodify(l:beamer, ':p')
