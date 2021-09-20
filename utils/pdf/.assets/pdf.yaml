@@ -21,7 +21,7 @@ header-includes:
     - \fancyfoot[C]{}
     - \renewcommand\chaptermark[1]{\markboth{#1}{}}
     - \renewcommand\sectionmark[1]{\markright{#1}}
-    - \renewcommand{\headrulewidth}{.1pt}
+    - \renewcommand{\headrulewidth}{.4pt}
     - \patchcmd{\chapter}{plain}{empty}{}{}
 output:
     pdf_document:
