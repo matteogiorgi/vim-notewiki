@@ -17,9 +17,9 @@ function! s:NotePandoc(format) abort
             let $pdf = fnamemodify(l:pdf, ':p')
             if !isdirectory($pdf)
                 if has('nvim')
-                    !cp -R $HOME/.config/nvim/$plugged/notewiki/utils/pdf $prefix
+                    !cp -R $HOME/.config/nvim/$plugged/vim-notewiki/utils/pdf $prefix
                 else
-                    !cp -R $HOME/.vim/$plugged/notewiki/utils/pdf $prefix
+                    !cp -R $HOME/.vim/$plugged/vim-notewiki/utils/pdf $prefix
                 endif
             endif
             !pandoc $currfile -s --to=pdf -o $pdf/%:t:r.pdf
@@ -31,9 +31,9 @@ function! s:NotePandoc(format) abort
             let $beamer = fnamemodify(l:beamer, ':p')
             if !isdirectory($beamer)
                 if has('nvim')
-                    !cp -R $HOME/.config/nvim/$plugged/notewiki/utils/beamer $prefix
+                    !cp -R $HOME/.config/nvim/$plugged/vim-notewiki/utils/beamer $prefix
                 else
-                    !cp -R $HOME/.vim/$plugged/notewiki/utils/beamer $prefix
+                    !cp -R $HOME/.vim/$plugged/vim-notewiki/utils/beamer $prefix
                 endif
             endif
             !pandoc $currfile -s --to=beamer -o $beamer/%:t:r.pdf
@@ -45,9 +45,9 @@ function! s:NotePandoc(format) abort
             let $html = fnamemodify(l:html, ':p')
             if !isdirectory($html)
                 if has('nvim')
-                    !cp -R $HOME/.config/nvim/$plugged/notewiki/utils/html $prefix
+                    !cp -R $HOME/.config/nvim/$plugged/vim-notewiki/utils/html $prefix
                 else
-                    !cp -R $HOME/.vim/$plugged/notewiki/utils/html $prefix
+                    !cp -R $HOME/.vim/$plugged/vim-notewiki/utils/html $prefix
                 endif
             endif
             !pandoc $currfile -s --to=html5 -o $html/%:t:r.html
