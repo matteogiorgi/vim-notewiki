@@ -2,7 +2,7 @@ let $wikipages = fnamemodify('~/notewiki', ':p')
 let $pdfpages = fnamemodify('~/notewiki/pdf', ':p')
 let $beamerpages = fnamemodify('~/notewiki/beamer', ':p')
 let $htmlpages = fnamemodify('~/notewiki/html', ':p')
-let g:notebrowser = 'xdg-open'  " brave,xdg-open
+let g:notebrowser = 'xdg-open'
 
 
 if !isdirectory($wikipages)
@@ -124,15 +124,3 @@ nnoremap <leader>ni :NoteWikiIndex<cr>
 nnoremap <leader>nb :NoteBrowseIndex<cr><cr>
 nnoremap <leader>ns :ScratchBuffer<cr>
 "}}}
-
-
-
-
-" command! NoteWiki :execute 'edit ' . '%:p:h' . '/index.md'
-" command! NextLink :call <SID>NextLink()
-" command! PrevLink :call <SID>PrevLink()
-" command! OpenLink :call <SID>OpenLink()
-" command! Back :call <SID>Back()
-
-" command! LOOKATPDFDOCUMENT :execute '!' . $pdfreader . ' %:p:h/pdf/%:p:t:r.pdf'
-" command! LOOKATPDFBEAMER :execute '!' . $pdfreader . ' %:p:h/beamer/%:p:t:r.pdf'
