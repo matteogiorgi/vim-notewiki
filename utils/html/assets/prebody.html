@@ -14,27 +14,3 @@
 <hr style="height:1px;border-width:0;color:#44475a;background-color:#44475a">
 </nav>
 -->
-
-
-<p style="color: #1e1f29; margin-bottom: 0px; width: 100%;">
-  <span style="font-size: 0.8em; font-weight: 600; float:right;">
-    Last update:
-    <script>
-      function lastmod(date) {
-        let m = date.getMonth() + 1;
-        let d = date.getDate();
-        let y = date.getYear();
-        y = ( y>=2000 ) ? y-=2000 : y
-        y = ( y>=100 ) ? y-=100 : y
-        let mmm = ( 1==m ) ? 'Jan' : ( 2==m ) ? 'Feb' : ( 3==m ) ? 'Mar' :
-                  ( 4==m ) ? 'Apr' : ( 5==m ) ? 'May' : ( 6==m ) ? 'Jun' :
-                  ( 7==m ) ? 'Jul' : ( 8==m ) ? 'Aug' : ( 9==m ) ? 'Sep' :
-                  ( 10==m ) ? 'Oct' : ( 11==m ) ? 'Nov' : 'Dec';
-        let ddd = ( d<10 ) ? '0'+d : d
-        let yyy = ( y<10 ) ? '200'+y : '20'+y
-        return mmm + ' ' + ddd + ', ' + yyy;
-      }
-      document.write(lastmod(new Date(document.lastModified)));
-    </script>
-  </span>
-</p>
