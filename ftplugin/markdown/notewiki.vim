@@ -13,7 +13,7 @@ nmap <buffer> <S-tab> <Plug>(PrevLink)
 nmap <buffer> <backspace> <Plug>(Back)
 nmap <buffer> <return> <Plug>(OpenLink)
 
-nnoremap <buffer> + :execute 'insert ' . '<!-- -->'
+nnoremap <buffer> + :execute 'normal ' . 'o<!-- -->'
 nnoremap <buffer> - :HeaderIncrease<cr>
 nnoremap <buffer> _ :HeaderDecrease<cr>
 
