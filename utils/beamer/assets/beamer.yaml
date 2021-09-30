@@ -9,6 +9,7 @@ header-includes:
     - \usepackage{libertinust1math}
 output: 
     beamer_presentation:
+        pandoc_args: "--highlight-style=$HOME/.vim/plugged/vim-notewiki/utils/beamer/dracula.theme"
         theme: "default"
         colortheme: "dracula"
 always_allow_html: true

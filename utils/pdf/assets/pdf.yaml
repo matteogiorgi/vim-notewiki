@@ -25,6 +25,7 @@ header-includes:
     - \patchcmd{\chapter}{plain}{empty}{}{}
 output:
     pdf_document:
+        pandoc_args: "--highlight-style=$HOME/.vim/plugged/vim-notewiki/utils/pdf/dracula.theme"
         keep_tex: no
         toc: false
         toc_depth: 2

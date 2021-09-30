@@ -24,7 +24,6 @@ function! s:NotePandoc(format) abort
             endif
             !pandoc $currfile -s --to=pdf -o $pdf/%:t:r.pdf
                         \ --pdf-engine=lualatex
-                        \ --highlight-style=$pdf/assets/dracula.theme
                         \ --metadata-file=$pdf/assets/pdf.yaml
         elseif a:format ==? 'beamer'
             let l:beamer = l:prefix . '/beamer'
@@ -38,7 +37,6 @@ function! s:NotePandoc(format) abort
             endif
             !pandoc $currfile -s --to=beamer -o $beamer/%:t:r.pdf
                         \ --pdf-engine=lualatex
-                        \ --highlight-style=$beamer/assets/dracula.theme
                         \ --metadata-file=$beamer/assets/beamer.yaml
         elseif a:format ==? 'html'
             let l:html = l:prefix . '/html'
