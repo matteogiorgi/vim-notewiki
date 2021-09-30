@@ -5,13 +5,13 @@ setlocal conceallevel=2
 nmap <buffer> <leader>ni  <Plug>(NoteWiki)
 nmap <buffer> <leader>nb  <Plug>(NoteBrowse)<cr>
 nmap <buffer> <leader>npp <Plug>(PdfDocument)<cr>
-nmap <buffer> <leader>npb <Plug>(PdfBeamer)<cr>
 nmap <buffer> <leader>nph <Plug>(HtmlPage)<cr>
 
 nmap <buffer> <tab> <Plug>(NextLink)
 nmap <buffer> <S-tab> <Plug>(PrevLink)
 nmap <buffer> <backspace> <Plug>(Back)
 nmap <buffer> <return> <Plug>(OpenLink)
+nmap <buffer> <space><space> <Plug>(Comment)
 
 nnoremap <buffer> + :execute 'normal ' . 'o<!-- -->'<cr>
 nnoremap <buffer> - :HeaderIncrease<cr>

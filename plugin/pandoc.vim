@@ -55,6 +55,5 @@ endfunction
 
 " Commands{{{
 nnoremap <silent> <Plug>(PdfDocument) :call <SID>NotePandoc('pdf')
-nnoremap <silent> <Plug>(PdfBeamer) :call <SID>NotePandoc('beamer')
 nnoremap <silent> <Plug>(HtmlPage) :call <SID>NotePandoc('html')
 "}}}
