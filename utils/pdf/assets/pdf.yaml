@@ -11,6 +11,8 @@ header-includes:
     - \usepackage{caption}
     - \usepackage{fancyhdr}
     - \usepackage{etoolbox}
+    - \usepackage[most]{tcolorbox}
+    - \usepackage{environ}
     - \titleformat{\chapter}[frame]{\Huge\scshape}{\filcenter\thechapter}{20pt}{\filcenter}
     - \titlespacing{\chapter}{0pt}{0pt}{40pt}
     - \captionsetup[figure]{ name=, labelsep=none, labelformat=empty }
@@ -23,6 +25,9 @@ header-includes:
     - \renewcommand\sectionmark[1]{\markright{#1}}
     - \renewcommand{\headrulewidth}{.4pt}
     - \patchcmd{\chapter}{plain}{empty}{}{}
+    - \NewEnviron{myblock}{\colorbox{draculadark}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\small\addtolength{\leftskip}{5mm}\addtolength{\rightskip}{5mm}\vspace{5mm}\itshape\BODY\vspace{5mm}}}}
+    - \renewcommand{\quote}{\myblock}
+    - \renewcommand{\endquote}{\endmyblock}
 output:
     pdf_document:
         keep_tex: no
