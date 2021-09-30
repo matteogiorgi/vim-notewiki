@@ -24,6 +24,7 @@ function! s:NotePandoc(format) abort
             endif
             !pandoc $currfile -s --to=pdf -o $pdf/%:t:r.pdf
                         \ --pdf-engine=lualatex
+                        \ --listings
                         \ --highlight-style=$pdf/assets/dracula.theme
                         \ --metadata-file=$pdf/assets/pdf.yaml
         elseif a:format ==? 'html'
