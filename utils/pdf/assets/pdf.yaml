@@ -10,9 +10,14 @@ header-includes:
     - \usepackage{titlesec}
     - \usepackage{caption}
     - \usepackage{fancyhdr}
+    - \usepackage{fancyvrb}
+    - \usepackage{verbatim}
     - \usepackage{etoolbox}
+    - \usepackage{color}
+    - \usepackage[svgnames]{xcolor}
     - \usepackage[most]{tcolorbox}
     - \usepackage{environ}
+    - \usepackage{fvextra}
     - \titleformat{\chapter}[frame]{\Huge\scshape}{\filcenter\thechapter}{20pt}{\filcenter}
     - \titlespacing{\chapter}{0pt}{0pt}{40pt}
     - \captionsetup[figure]{ name=, labelsep=none, labelformat=empty }
@@ -21,13 +26,16 @@ header-includes:
     - \fancyhead[L]{\scshape\leftmark}
     - \fancyhead[R]{\scshape pag. \thepage}
     - \fancyfoot[C]{}
+    - \patchcmd{\chapter}{plain}{empty}{}{}
+    - \NewEnviron{myblock}{\colorbox{draculadark}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\small\addtolength{\leftskip}{5mm}\addtolength{\rightskip}{5mm}\vspace{5mm}\itshape\BODY\vspace{5mm}}}}
+    - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+    - \let\OldTexttt\texttt
     - \renewcommand\chaptermark[1]{\markboth{#1}{}}
     - \renewcommand\sectionmark[1]{\markright{#1}}
     - \renewcommand{\headrulewidth}{.4pt}
-    - \patchcmd{\chapter}{plain}{empty}{}{}
-    - \NewEnviron{myblock}{\colorbox{draculadark}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\small\addtolength{\leftskip}{5mm}\addtolength{\rightskip}{5mm}\vspace{5mm}\itshape\BODY\vspace{5mm}}}}
     - \renewcommand{\quote}{\myblock}
     - \renewcommand{\endquote}{\endmyblock}
+    - \renewcommand{\texttt}[1]{\OldTexttt{\colorbox{draculadark}{#1}}}
 output:
     pdf_document:
         keep_tex: no
