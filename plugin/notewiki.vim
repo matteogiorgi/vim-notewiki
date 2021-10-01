@@ -111,30 +111,10 @@ endfunction
 "}}}
 
 
-" Toggle autogroup{{{
-augroup notesettings
-    autocmd!
-    autocmd BufEnter *
-                \ if &filetype ==? 'markdown' || &filetype ==? 'markdown.pandoc' || &filetype ==? 'pandoc' |
-                \     augroup overlengthtoggle |
-                \         autocmd! |
-                \     augroup end |
-                \ else |
-                \     augroup overlengthtoggle |
-                \         autocmd! |
-                \         autocmd InsertEnter * let &colorcolumn = '81,'.join(range(81,999),',') |
-                \         autocmd InsertLeave * set colorcolumn= |
-                \     augroup end |
-                \ endif
-augroup end
-"}}}
-
-
 " Commands{{{
 command! NoteWikiIndex :execute 'edit ' . $wikipages . '/index.md'
 command! NoteBrowseIndex :execute '!' . g:notebrowser . ' ' . $wikipages
 command! -nargs=0 ScratchBuffer call <SID>ScratchBuffer()
-command! ToggleTestAutoGroup call <SID>ToggleTestAutoGroup()
 "}}}
 
 " Plug{{{
