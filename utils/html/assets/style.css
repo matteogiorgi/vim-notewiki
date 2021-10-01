@@ -729,6 +729,8 @@ nav ul li {
 
 /* Create a style for the first level items */
 nav > div > ul > li > a {
+    font-size: 0.8em;
+    font-weight: 600;
     color: #bfbfbf !important;
     display: block;
     line-height: 2em;
