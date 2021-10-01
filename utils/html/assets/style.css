@@ -522,10 +522,10 @@ blockquote {
     background-color: #2e2f3e;
     margin: 0;
     padding-left: 3em;
-    padding-right: 0.5em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    border-left: 0.5em #6272a4 solid;
+    padding-right: 3em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    border-left: 3em #6272a4 solid;
     font-style: italic;
 }
 
