@@ -13,7 +13,6 @@ nmap <buffer> <backspace> <Plug>(Back)
 nmap <buffer> <return> <Plug>(OpenLink)
 nmap <buffer> <space><space> <Plug>(Comment)
 
-nnoremap <buffer> + :execute 'normal ' . 'o<!-- -->'<cr>
 nnoremap <buffer> - :HeaderIncrease<cr>
 nnoremap <buffer> _ :HeaderDecrease<cr>
 
