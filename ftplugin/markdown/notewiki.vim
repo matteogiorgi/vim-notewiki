@@ -11,7 +11,7 @@ nmap <buffer> <tab> <Plug>(NextLink)
 nmap <buffer> <S-tab> <Plug>(PrevLink)
 nmap <buffer> <backspace> <Plug>(Back)
 nmap <buffer> <return> <Plug>(OpenLink)
-" nmap <buffer> <space><space> <Plug>(Comment)
+nmap <buffer> \ <Plug>(EndPar)
 
 nnoremap <buffer> - :HeaderIncrease<cr>
 nnoremap <buffer> _ :HeaderDecrease<cr>
