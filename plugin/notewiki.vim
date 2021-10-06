@@ -12,6 +12,7 @@ endif
 
 " EndPar{{{
 function s:EndPar() abort
+    execute 'normal o'
     execute 'normal o<!-- -->'
     execute 'normal o'
 endfunction
