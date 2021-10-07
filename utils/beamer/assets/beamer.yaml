@@ -7,6 +7,19 @@ header-includes:
     - \usepackage{beamer/assets/beamercolorthemedracula}
     - \usepackage{libertine}
     - \usepackage{libertinust1math}
+    - \usepackage{verbatim}
+    - \usepackage{etoolbox}
+    - \usepackage{color}
+    - \usepackage[svgnames]{xcolor}
+    - \usepackage[most]{tcolorbox}
+    - \usepackage{environ}
+    - \usepackage{fvextra}
+    - \NewEnviron{myblock}{\colorbox{draculabglight}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\small\addtolength{\leftskip}{5mm}\addtolength{\rightskip}{5mm}\vspace{5mm}\itshape\BODY\vspace{5mm}}}}
+    - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+    - \let\OldTexttt\texttt
+    - \renewcommand{\quote}{\myblock}
+    - \renewcommand{\endquote}{\endmyblock}
+    - \renewcommand{\texttt}[2]{\OldTexttt{\colorbox{draculabglight}{#1}}}
 output: 
     beamer_presentation:
         theme: "default"
