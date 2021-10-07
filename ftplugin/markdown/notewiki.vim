@@ -5,6 +5,7 @@ setlocal conceallevel=2
 nmap <buffer> <leader>ni  <Plug>(NoteWiki)
 nmap <buffer> <leader>nb  <Plug>(NoteBrowse)<cr>
 nmap <buffer> <leader>npp <Plug>(PdfDocument)<cr>
+nmap <buffer> <leader>npb <Plug>(PdfBeamer)<cr>
 nmap <buffer> <leader>nph <Plug>(HtmlPage)<cr>
 
 nmap <buffer> <tab> <Plug>(NextLink)

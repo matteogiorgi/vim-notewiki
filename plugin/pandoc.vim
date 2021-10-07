@@ -26,6 +26,20 @@ function! s:NotePandoc(format) abort
                         \ --pdf-engine=lualatex
                         \ --highlight-style=$pdf/assets/dracula.theme
                         \ --metadata-file=$pdf/assets/pdf.yaml
+        elseif a:format ==? 'beamer'
+            let l:beamer = l:prefix . '/beamer'
+            let $beamer = fnamemodify(l:beamer, ':p')
+            if !isdirectory($beamer)
+                if has('nvim')
+                    !cp -R $HOME/.config/nvim/$plugged/vim-notewiki/utils/beamer $prefix
+                else
+                    !cp -R $HOME/.vim/$plugged/vim-notewiki/utils/beamer $prefix
+                endif
+            endif
+            !pandoc $currfile -s --to=beamer -o $beamer/%:t:r.pdf
+                        \ --pdf-engine=lualatex
+                        \ --highlight-style=$beamer/assets/dracula.theme
+                        \ --metadata-file=$beamer/assets/beamer.yaml
         elseif a:format ==? 'html'
             let l:html = l:prefix . '/html'
             let $html = fnamemodify(l:html, ':p')
@@ -55,5 +69,6 @@ endfunction
 
 " Commands{{{
 nnoremap <silent> <Plug>(PdfDocument) :call <SID>NotePandoc('pdf')
+nnoremap <silent> <Plug>(PdfBeamer) :call <SID>NotePandoc('beamer')
 nnoremap <silent> <Plug>(HtmlPage) :call <SID>NotePandoc('html')
 "}}}
