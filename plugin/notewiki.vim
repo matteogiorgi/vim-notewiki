@@ -111,16 +111,30 @@ function s:ScratchBuffer()
 endfunction
 "}}}
 
+" Browse main notes directory{{{
+function s:NoteBrowseIndex()
+    execute '!' . g:notebrowser . ' ' . $wikipages
+    execute 'redraw!'
+endfunction
+"}}}
+
+" Browse current notes directory{{{
+function s:NoteBrowse()
+    execute '!' . g:notebrowser . ' ' . '%:p:h'
+    execute 'redraw!'
+endfunction
+"}}}
+
 
 " Commands{{{
 command! NoteWikiIndex :execute 'edit ' . $wikipages . '/index.md'
-command! NoteBrowseIndex :execute '!' . g:notebrowser . ' ' . $wikipages
+command! NoteBrowseIndex call <SID>NoteBrowseIndex()
 command! -nargs=0 ScratchBuffer call <SID>ScratchBuffer()
 "}}}
 
 " Plug{{{
 nnoremap <silent> <Plug>(NoteWiki) :execute 'edit ' . '%:p:h' . '/index.md'<cr>
-nnoremap <silent> <Plug>(NoteBrowse) :execute '!' . g:notebrowser . ' ' . '%:p:h'<cr>
+nnoremap <silent> <Plug>(NoteBrowse) :call <SID>NoteBrowse()<cr>
 nnoremap <silent> <Plug>(NextLink) :call <SID>NextLink()<cr>
 nnoremap <silent> <Plug>(PrevLink) :call <SID>PrevLink()<cr>
 nnoremap <silent> <Plug>(OpenLink) :call <SID>OpenLink()<cr>
@@ -130,6 +144,6 @@ nnoremap <silent> <Plug>(EndPar) :call <SID>EndPar()<cr>
 
 " maps{{{
 nnoremap <leader>ni :NoteWikiIndex<cr>
-nnoremap <leader>nb :NoteBrowseIndex<cr><cr>
+nnoremap <leader>nb :NoteBrowseIndex<cr>
 nnoremap <leader>ns :ScratchBuffer<cr>
 "}}}
