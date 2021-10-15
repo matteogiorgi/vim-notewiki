@@ -108,6 +108,7 @@ function s:ScratchBuffer()
     setlocal bufhidden=delete
     setlocal nobuflisted
     setlocal noswapfile
+    setlocal filetype=markdown.pandoc
 endfunction
 "}}}
 
