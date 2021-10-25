@@ -19,5 +19,3 @@ nnoremap <buffer> _ :HeaderDecrease<cr>
 
 noremap <buffer> <silent> k gk
 noremap <buffer> <silent> j gj
-noremap <buffer> <silent> <up>   gk
-noremap <buffer> <silent> <down> gj
