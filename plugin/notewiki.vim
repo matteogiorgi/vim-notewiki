@@ -135,12 +135,12 @@ command! -nargs=0 ScratchBuffer call <SID>ScratchBuffer()
 
 " Plug{{{
 nnoremap <silent> <Plug>(NoteWiki)   :execute 'edit ' . '%:p:h' . '/index.md'<cr>
-nnoremap <silent> <Plug>(NoteBrowse) :call <SID>NoteBrowse()
-nnoremap <silent> <Plug>(NextLink)   :call <SID>NextLink()
-nnoremap <silent> <Plug>(PrevLink)   :call <SID>PrevLink()
-nnoremap <silent> <Plug>(OpenLink)   :call <SID>OpenLink()
-nnoremap <silent> <Plug>(Back)       :call <SID>Back()
-nnoremap <silent> <Plug>(EndPar)     :call <SID>EndPar()
+nnoremap <silent> <Plug>(NoteBrowse) :call <SID>NoteBrowse()<cr>
+nnoremap <silent> <Plug>(NextLink)   :call <SID>NextLink()<cr>
+nnoremap <silent> <Plug>(PrevLink)   :call <SID>PrevLink()<cr>
+nnoremap <silent> <Plug>(OpenLink)   :call <SID>OpenLink()<cr>
+nnoremap <silent> <Plug>(Back)       :call <SID>Back()<cr>
+nnoremap <silent> <Plug>(EndPar)     :call <SID>EndPar()<cr>
 "}}}
 
 " maps{{{
