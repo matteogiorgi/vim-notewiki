@@ -1,5 +1,7 @@
 " notewiki-plugin location
-let $plugged = 'plugged'
+if !exists('$plugged')
+    let $plugged = 'plugged'
+endif
 
 
 " NotePandoc{{{

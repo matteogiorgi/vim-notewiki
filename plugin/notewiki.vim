@@ -2,7 +2,10 @@ let $wikipages = fnamemodify('~/notewiki', ':p')
 let $pdfpages = fnamemodify('~/notewiki/pdf', ':p')
 let $beamerpages = fnamemodify('~/notewiki/beamer', ':p')
 let $htmlpages = fnamemodify('~/notewiki/html', ':p')
-let g:notebrowser = 'xdg-open'
+
+if !exists('g:notebrowser')
+    let g:notebrowser = 'xdg-open'
+endif
 
 
 if !isdirectory($wikipages)
