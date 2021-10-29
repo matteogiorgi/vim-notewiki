@@ -23,11 +23,12 @@ endfunction
 
 " CreateLink{{{
 function s:CreateLink() abort
+    let @z = ''
 	execute 'normal ' . '"zyiw'
 	if @z !=? ''
 		execute 'normal ' . 'ciw[]()'
-		execute 'normal ' . 'F[p'
-		execute 'normal ' . 'f(p'
+		execute 'normal ' . 'F["zp'
+		execute 'normal ' . 'f("zp'
 		execute 'normal ' . 'a.md'
 		execute 'normal ' . 'F['
 	endif
