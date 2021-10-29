@@ -27,8 +27,8 @@ function s:CreateLink() abort
 	execute 'normal ' . '"zyiw'
 	if @z !=? ''
 		execute 'normal ' . 'ciw[]()'
-		execute 'normal ' . 'F["zp'
-		execute 'normal ' . 'f("zp'
+		execute 'normal ' . 'F[p'
+		execute 'normal ' . 'f(p'
 		execute 'normal ' . 'a.md'
 		execute 'normal ' . 'F['
 	endif
