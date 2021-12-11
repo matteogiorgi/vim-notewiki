@@ -473,21 +473,20 @@ img {
     max-width: 100%;
 }
 
-h1,
+h1 {
+    font-weight: 600;
+    color: #ff79c6;
+    line-height: 1em;
+}
+
 h2,
 h3,
 h4,
 h5,
 h6 {
     font-weight: 600;
-    color: #ff79c6;
+    color: #f8f8f2;
     line-height: 1em;
-}
-
-h4,
-h5,
-h6 {
-    font-weight: bold;
 }
 
 h1 {
