@@ -2,10 +2,11 @@
 if !exists('$plugged')
     let $plugged = 'plugged'
 endif
+"}}}
 
 
 " NotePandoc{{{
-function! s:NotePandoc(format) abort
+function! s:NotePandoc() abort
     let l:prefix = expand('%:p:h')
     let l:currfile = expand('%:p')
 
@@ -14,63 +15,23 @@ function! s:NotePandoc(format) abort
     let $currfile = fnamemodify(l:currfile, ':p')
 
 	if &filetype ==? 'markdown' || &filetype ==? 'markdown.pandoc' || &filetype ==? 'pandoc'
-	    if a:format ==? 'pdf'
-            let l:pdf = l:prefix . '/pdf'
-            let $pdf = fnamemodify(l:pdf, ':p')
-            if !isdirectory($pdf)
-                if has('nvim')
-                    !cp -R $HOME/.config/nvim/$plugged/vim-notewiki/utils/pdf $prefix
-                else
-                    !cp -R $HOME/.vim/$plugged/vim-notewiki/utils/pdf $prefix
-                endif
+        let l:pandoc = l:prefix . '/pandoc'
+        let $pandoc = fnamemodify(l:pandoc, ':p')
+        if !isdirectory($pandoc)
+            if has('nvim')
+                !cp -R $HOME/.config/nvim/$plugged/vim-notewiki/pandoc $prefix
+            else
+                !cp -R $HOME/.vim/$plugged/vim-notewiki/pandoc $prefix
             endif
-            !pandoc $currfile -s --to=pdf -o $pdf/%:t:r.pdf
-                        \ --pdf-engine=lualatex
-                        \ --highlight-style=$pdf/assets/dracula.theme
-                        \ --metadata-file=$pdf/assets/pdf.yaml
-        elseif a:format ==? 'beamer'
-            let l:beamer = l:prefix . '/beamer'
-            let $beamer = fnamemodify(l:beamer, ':p')
-            if !isdirectory($beamer)
-                if has('nvim')
-                    !cp -R $HOME/.config/nvim/$plugged/vim-notewiki/utils/beamer $prefix
-                else
-                    !cp -R $HOME/.vim/$plugged/vim-notewiki/utils/beamer $prefix
-                endif
-            endif
-            !pandoc $currfile -s --to=beamer -o $beamer/%:t:r.pdf
-                        \ --pdf-engine=lualatex
-                        \ --highlight-style=$beamer/assets/dracula.theme
-                        \ --metadata-file=$beamer/assets/beamer.yaml
-        elseif a:format ==? 'html'
-            let l:html = l:prefix . '/html'
-            let $html = fnamemodify(l:html, ':p')
-            if !isdirectory($html)
-                if has('nvim')
-                    !cp -R $HOME/.config/nvim/$plugged/vim-notewiki/utils/html $prefix
-                else
-                    !cp -R $HOME/.vim/$plugged/vim-notewiki/utils/html $prefix
-                endif
-            endif
-            !pandoc $currfile -s --to=html5 -o $html/%:t:r.html
-                        \ --mathjax
-                        \ --highlight-style=$html/assets/dracula.theme
-                        \ -c assets/style.css
-                        \ --lua-filter=$html/assets/link2html.lua
-                        \ -B $html/assets/prebody.html
-                        \ -A $html/assets/footer.html
-                        \ -H $html/assets/header.html
-                        \ -T $prefixtail
         endif
+        !$pandoc/assets/makenote %:t:r
     else
-        echomsg 'This is not the file you are looking for.'
+        echomsg 'I need an md file!'
     endif
 endfunction
 "}}}
 
 
 " Commands{{{
-nnoremap <silent> <Plug>(PdfDocument) :call <SID>NotePandoc('pdf')
-nnoremap <silent> <Plug>(PdfBeamer) :call <SID>NotePandoc('beamer')
-nnoremap <silent> <Plug>(HtmlPage) :call <SID>NotePandoc('html')
+nnoremap <silent> <Plug>(NotePandoc) :call <SID>NotePandoc()
 "}}}
