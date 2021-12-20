@@ -118,14 +118,14 @@ endfunction
 
 " Browse main notes directory{{{
 function s:NoteBrowseIndex()
-    execute '!' . g:notebrowser . ' ' . $wikipages
+    execute '!' . g:notebrowser . ' ' . $wikipages . ' &'
     execute 'redraw!'
 endfunction
 "}}}
 
 " Browse current notes directory{{{
 function s:NoteBrowse()
-    execute '!' . g:notebrowser . ' ' . '%:p:h'
+    execute '!' . g:notebrowser . ' ' . '%:p:h' . ' &'
     execute 'redraw!'
 endfunction
 "}}}
