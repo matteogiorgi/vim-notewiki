@@ -1,5 +1,5 @@
 /*
-latex.css
+latex.css slightly modified from
 https://github.com/davidrzs/latexcss
 MIT-License
 */
@@ -120,7 +120,7 @@ kbd {
     font-style: italic;
 }
 .theorem:before {
- content: "Theorem " counter(theorem) ".";
+    content: "Theorem " counter(theorem) ".";
     font-weight: bold;
     font-style: normal;
 }
