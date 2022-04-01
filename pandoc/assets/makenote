@@ -3,6 +3,6 @@
 pandoc $currfile -s --to=html5 -o $pandoc/$1.html \
             --mathjax \
             --highlight-style=tango \
-            --lua-filter=$pandoc/assets/link2html.lua \
+            --filter=$pandoc/assets/link2html.py \
             -H $pandoc/assets/header.html \
             -T $prefixtail
