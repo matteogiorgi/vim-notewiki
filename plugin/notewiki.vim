@@ -148,7 +148,7 @@ nnoremap <silent> <Plug>(EndPar)     :call <SID>EndPar()<cr>
 "}}}
 
 " maps{{{
-" nnoremap <leader>ni :NoteWikiIndex<cr>
-" nnoremap <leader>nb :NoteBrowseIndex<cr>
+nnoremap <leader>n :NoteWikiIndex<cr>
+nnoremap <leader>N :NoteBrowseIndex<cr>
 " nnoremap <leader>ns :ScratchBuffer<cr>
 "}}}
