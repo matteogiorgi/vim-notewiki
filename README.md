@@ -1,6 +1,6 @@
 # Vim-Notewiki
 
-A lightweight [Vim](https://www.vim.org/) plugin for keeping a personal wiki of Markdown notes, with one-command export to styled, self-contained HTML via [Pandoc](https://pandoc.org/).
+A lightweight [Vim](https://www.vim.org/) / [NeoVim](https://neovim.io/) plugin for keeping a personal wiki of Markdown notes, with one-command export to styled, self-contained HTML via [Pandoc](https://pandoc.org/).
 
 Notes are plain Markdown files linked to each other like a wiki. `vim-notewiki` adds the navigation, link-creation and export commands on top; it also bundles [vim-pandoc-syntax](https://github.com/vim-pandoc/vim-pandoc-syntax) for Pandoc-flavored Markdown highlighting and a small Beamer syntax extension.
 
@@ -66,30 +66,30 @@ From there, write a link such as `[my first note](note.md)` and press `<CR>` on 
 
 Mappings below are active in Markdown buffers (`ftplugin/markdown/notewiki.vim`) and are built on top of `<Plug>` mappings, so they are easy to remap.
 
-| Mapping         | `<Plug>` name         | Action                                             |
-|-----------------|------------------------|-----------------------------------------------------|
-| `<leader>n`     | `(NoteWiki)`           | Open the index note of the current directory        |
-| `<leader>N`     | `(NoteBrowse)`         | Open the current note's directory in a file browser  |
-| `<leader>p`     | `(NotePandoc)`         | Export the current note to HTML                      |
+| Mapping         | `<Plug>`               | Action                                                                         |
+|-----------------|------------------------|--------------------------------------------------------------------------------|
+| `<leader>n`     | `(NoteWiki)`           | Open the index note of the current directory                                   |
+| `<leader>N`     | `(NoteBrowse)`         | Open the current note's directory in a file browser                            |
+| `<leader>p`     | `(NotePandoc)`         | Export the current note to HTML                                                |
 | `<CR>`          | `(OpenLink)`           | Follow the link under the cursor, or create one from the word under the cursor |
-| `<BS>`          | `(Back)`               | Go back to the note you came from                    |
-| `<Tab>`         | `(NextLink)`           | Jump to the next link in the note                     |
-| `<S-Tab>`       | `(PrevLink)`           | Jump to the previous link in the note                 |
-| `\`             | `(EndPar)`             | Insert an HTML-comment paragraph break                |
-| `-` / `_`       | —                      | `:HeaderIncrease` / `:HeaderDecrease` (promote/demote the heading level) |
-| `j` / `k`       | —                      | Move by display line (`gj`/`gk`), useful with `wrap`  |
+| `<BS>`          | `(Back)`               | Go back to the note you came from                                              |
+| `<Tab>`         | `(NextLink)`           | Jump to the next link in the note                                              |
+| `<S-Tab>`       | `(PrevLink)`           | Jump to the previous link in the note                                          |
+| `\`             | `(EndPar)`             | Insert an HTML-comment paragraph break                                         |
+| `-` / `_`       | —                      | `:HeaderIncrease` / `:HeaderDecrease` (promote/demote the heading level)       |
+| `j` / `k`       | —                      | Move by display line (`gj`/`gk`), useful with `wrap`                           |
 
 Global mappings (available everywhere, not just in notes):
 
-| Mapping       | Command               | Action                              |
+| Mapping       | Command                | Action                               |
 |---------------|------------------------|--------------------------------------|
 | `<leader>n`   | `:NoteWikiIndex`       | Open `~/notewiki/index.md`           |
 | `<leader>N`   | `:NoteBrowseIndex`     | Open `~/notewiki` in a file browser  |
 
 Other commands:
 
-| Command           | Action                                              |
-|--------------------|------------------------------------------------------|
+| Command            | Action                                                    |
+|--------------------|-----------------------------------------------------------|
 | `:ScratchBuffer`   | Open a disposable, unsaved scratch buffer for quick notes |
 
 
