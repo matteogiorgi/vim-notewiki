@@ -30,19 +30,33 @@ Notes are plain Markdown files linked to each other like a wiki. `vim-notewiki` 
 
 ## Installation
 
-With [vim-plug](https://github.com/junegunn/vim-plug):
+Use your favorite plugin manager.
+
+**[vim-plug](https://github.com/junegunn/vim-plug)**
 
 ```vim
 Plug 'matteogiorgi/vim-notewiki'
 ```
 
-With [packer.nvim](https://github.com/wbthomason/packer.nvim):
+**[Vundle](https://github.com/VundleVim/Vundle.vim)**
+
+```vim
+Plugin 'matteogiorgi/vim-notewiki'
+```
+
+**[packer.nvim](https://github.com/wbthomason/packer.nvim)**
 
 ```lua
 use 'matteogiorgi/vim-notewiki'
 ```
 
-Then run the plugin manager's install command (`:PlugInstall`, `:PackerSync`, ...).
+**Native package (Vim 8+ / Neovim), no plugin manager**
+
+```bash
+git clone https://github.com/matteogiorgi/vim-notewiki.git ~/.vim/pack/plugins/start/vim-notewiki
+```
+
+Then run the plugin manager's install command (`:PlugInstall`, `:PluginInstall`, `:PackerSync`, ...) — not needed for the native package method.
 
 The plugin activates automatically on `filetype=markdown` buffers; there is nothing else to configure to get started.
 
