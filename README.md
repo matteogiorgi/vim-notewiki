@@ -1,4 +1,4 @@
-# vim-notewiki
+# Vim-Notewiki
 
 A lightweight [Vim](https://www.vim.org/) plugin for keeping a personal wiki of Markdown notes, with one-command export to styled, self-contained HTML via [Pandoc](https://pandoc.org/).
 
