@@ -1,6 +1,6 @@
 # Vim-NoteWiki
 
-A lightweight [Vim](https://www.vim.org/) / [NeoVim](https://neovim.io/) plugin for keeping a personal wiki of Markdown notes, with one-command export to styled, self-contained HTML via [Pandoc](https://pandoc.org/).
+A lightweight [Vim](https://www.vim.org/) / [Neovim](https://neovim.io/) plugin for keeping a personal wiki of Markdown notes, with one-command export to self-contained HTML via [Pandoc](https://pandoc.org/).
 
 Notes are plain Markdown files linked to each other like a wiki. `vim-notewiki` adds the navigation, link-creation and export commands on top; it also bundles [vim-pandoc-syntax](https://github.com/vim-pandoc/vim-pandoc-syntax) for Pandoc-flavored Markdown highlighting and a small Beamer syntax extension.
 
@@ -71,7 +71,7 @@ On load, `vim-notewiki` makes sure `~/notewiki` exists — this is the root of y
 :NoteWikiIndex
 ```
 
-From there, write a link such as `[my first note](note.md)` and press `<CR>` on it to create and open `note.md` right next to the current file. Every note you write lives as a plain `.md` file, so the whole wiki is just a directory tree you can inspect, `grep`, or version-control with git.
+From there, place the cursor on a word and press `<CR>`: the first press turns it into a link (`word` $\to$ `[word](word.md)`); pressing `<CR>` again — now on the link — creates and opens `word.md` right next to the current file. (If you write the full `[text](file.md)` syntax by hand, one `<CR>` on it is enough, since it is already a link.) Every note you write lives as a plain `.md` file, so the whole wiki is just a directory tree you can inspect, `grep`, or version-control with git.
 
 
 
@@ -113,11 +113,11 @@ Other commands:
 
 Running `:NotePandoc` (or `<leader>p`) on a Markdown note:
 
-1. Copies the bundled `pandoc/` assets (stylesheet, header, link filter) next to your note the first time it is exported, so each wiki sub-directory ends up self-contained and portable.
+1. Copies the bundled `pandoc/` assets (favicon/head snippet, link-rewriting filter, and the export script itself) next to your note the first time it is exported, so each wiki sub-directory ends up self-contained and portable.
 2. Runs Pandoc with MathJax support, the note's parent directory name as the page title, and the `link2html.py` filter, which rewrites `.md` links to `.html` so the exported pages keep linking to each other correctly.
 3. Writes the result as `pandoc/<notename>.html` next to your note.
 
-This is handled by the [`makenote`](https://github.com/matteogiorgi/vim-notewiki/blob/main/pandoc/assets/makenote) script:
+Steps 2 and 3 are handled by the [`makenote`](https://github.com/matteogiorgi/vim-notewiki/blob/main/pandoc/assets/makenote) script (step 1 is done by the `:NotePandoc` Vim function itself):
 
 ```bash
 pandoc "$currfile" -s --to=html5 -o "$pandoc/$1.html" \
@@ -126,6 +126,8 @@ pandoc "$currfile" -s --to=html5 -o "$pandoc/$1.html" \
     -H "$pandoc/assets/header.html" \
     -T "$prefixtail"
 ```
+
+> `makenote` is a plain shell script copied into every wiki sub-directory, so it is meant to be edited: tweak the Pandoc flags, drop the MathJax/header options, or point `--to` at a different writer to export somewhere other than HTML (e.g. `--to=pdf -o "$pandoc/$1.pdf"` for a PDF, provided a PDF engine such as LaTeX is installed). Changes only affect notes in that sub-directory, since each one gets its own copy of the `pandoc/` assets.
 
 
 
