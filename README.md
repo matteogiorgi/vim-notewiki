@@ -65,13 +65,15 @@ The plugin activates automatically on `filetype=markdown` buffers; there is noth
 
 ## Getting started
 
-On load, `vim-notewiki` makes sure `~/notewiki` exists — this is the root of your wiki. Open (or create) its index with:
+On load, `vim-notewiki` makes sure `~/notewiki` exists and treats it as the default root of your wiki. This is just a convenient starting point, though: the linking and navigation commands work the same in any directory, so you can keep your notes wherever you like (see [Configuration](#configuration) to change the default). Open (or create) the default wiki's index with:
 
 ```vim
 :NoteWikiIndex
 ```
 
-From there, place the cursor on a word and press `<CR>`: the first press turns it into a link (`word` $\to$ `[word](word.md)`); pressing `<CR>` again — now on the link — creates and opens `word.md` right next to the current file. (If you write the full `[text](file.md)` syntax by hand, one `<CR>` on it is enough, since it is already a link.) Every note you write lives as a plain `.md` file, so the whole wiki is just a directory tree you can inspect, `grep`, or version-control with git.
+From there, or any other markdown file, place the cursor on a word and press `<CR>`: the first press turns it into a link (`word` $\to$ `[word](word.md)`); pressing `<CR>` again — now on the link — creates and opens `word.md` right next to the current file. (If you write the full `[text](file.md)` syntax by hand, one `<CR>` on it is enough, since it is already a link.)
+
+Every note you write lives as a plain `.md` file, so the whole wiki is just a directory tree you can inspect, `grep`, or version-control with git.
 
 
 
